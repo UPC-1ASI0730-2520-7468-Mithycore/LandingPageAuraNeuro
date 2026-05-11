@@ -3,503 +3,553 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AuraNeuro</title>
+  <title>Courtly | Reserva. Juega. Disfruta.</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <meta name="description" content="Courtly te permite buscar y reservar canchas deportivas, conectar con entrenadores independientes y organizar tus partidos desde una sola app." />
+  <meta name="keywords" content="Courtly, reserva de canchas, entrenadores deportivos, partidos, app deportiva, deporte amateur" />
+  <meta name="author" content="Mova" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
   <script src="language.js" defer></script>
 </head>
 
-<body class="bg-dark text-light">
+<body>
 
+  <!-- ===== HEADER ===== -->
+  <header class="navbar bg-darker">
+    <div class="navbar-container">
+      <a href="#home" class="navbar-logo">
+        <img src="imgs/logo.png" alt="Courtly logo" />
+      </a>
 
-<!-- ==== HEADER ==== -->
-<header class="navbar bg-darker">
-  <div class="navbar-container">
-    <a href="#home" class="navbar-logo">
-      <img src="imgs/logo.png" alt="AuraNeuro" />
-    </a>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-    <button class="menu-toggle" aria-label="Abrir menú">
-      <i class="fa-solid fa-bars"></i>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="#home" class="nav-item active" data-key="nav_home">Inicio</a></li>
+          <li><a href="#features" class="nav-item" data-key="nav_features">Características</a></li>
+          <li><a href="#benefits" class="nav-item" data-key="nav_benefits">Beneficios</a></li>
+          <li><a href="#how" class="nav-item" data-key="nav_how">Cómo funciona</a></li>
+          <li><a href="#plans" class="nav-item" data-key="nav_plans">Planes</a></li>
+          <li><a href="#team" class="nav-item" data-key="nav_team">Equipo</a></li>
+          <li><a href="#testimonials" class="nav-item" data-key="nav_testimonials">Testimonios</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-toggle" type="button" aria-label="Cambiar idioma">
+          <i class="fa-solid fa-globe"></i>
+          <span class="lang-label">ES</span>
+        </button>
+        <a href="#cta" class="btn-main btn-download" data-key="nav_download">Descargar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero-carousel bg-gradient">
+    <div class="carousel-container">
+
+      <div class="carousel-slide active">
+        <div class="hero-content">
+          <span class="hero-badge" data-key="hero_badge_1">Para jugadores</span>
+          <h1 data-key="hero_title_1">Encuentra cancha y arma tu partido sin complicarte</h1>
+          <p>
+            <span data-key="hero_text_1">Busca canchas, compara horarios y reserva en minutos para pasar menos tiempo coordinando y más tiempo jugando.</span>
+          </p>
+          <div class="hero-buttons">
+            <a href="#plans" class="btn-main" data-key="hero_btn_plans_1">Ver planes para jugadores</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="imgs/slide1.png" alt="Buscar y reservar canchas con Courtly">
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <div class="hero-content">
+          <span class="hero-badge" data-key="hero_badge_2">Para entrenadores</span>
+          <h1 data-key="hero_title_2">Haz visible tu servicio y organiza tus entrenamientos</h1>
+          <p>
+            <span data-key="hero_text_2">Publica tu perfil, muestra disponibilidad y gestiona solicitudes con una experiencia más clara y profesional.</span>
+          </p>
+          <div class="hero-buttons">
+            <a href="#plans" class="btn-main" data-key="hero_btn_plans_2">Ver planes para entrenadores</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="imgs/slide2.png" alt="Reservas y gestión deportiva en Courtly">
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control prev" aria-label="Anterior">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="carousel-control next" aria-label="Siguiente">
+      <i class="fa-solid fa-chevron-right"></i>
     </button>
 
-    <nav class="nav-links">
-      <ul>
-        <li><a href="index.html#home" class="nav-item" data-key="home">Inicio</a></li>
-        <li><a href="index.html#features" class="nav-item" data-key="features">Características</a></li>
-        <li><a href="index.html#how" class="nav-item" data-key="how">Cómo funciona</a></li>
-        <li><a href="index.html#plans" class="nav-item" data-key="plans">Planes</a></li>
-        <li><a href="index.html#team" class="nav-item" data-key="about">Sobre Nosotros</a></li>
-        <li><a href="index.html#testimonials" class="nav-item" data-key="testimonials">Testimonios</a></li>
-      </ul>
-    </nav>
-
-    <div class="header-actions">
-      <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-main" data-key="subscribe">Suscribirse</a>
-      <button class="lang-toggle">
-        <span class="lang-icon"><i class="fa-solid fa-globe"></i></span>
-        <span>ES</span>
-      </button>
+    <div class="carousel-indicators">
+      <span class="dot active"></span>
+      <span class="dot"></span>
     </div>
-  </div>
-</header>
+  </section>
 
-<!-- ==== HERO ==== -->
-<section id="home" class="hero-carousel bg-gradient">
-  <div class="carousel-container">
+  <!-- ===== FEATURES ===== -->
+  <section id="features" class="value-prop-slider section-light">
+    <div class="container">
+      <h2 data-key="features_title">¿Por qué Courtly?</h2>
+      <p class="subtitle">
+        <span data-key="features_subtitle">Courtly centraliza la búsqueda, reserva y organización deportiva
+        en una experiencia simple, rápida y confiable.</span>
+      </p>
 
-    <div class="carousel-slide active">
-      <div class="hero-content">
-        <h1 data-key="hero1_title">Recupera tu bienestar<br>emocional, paso a paso</h1>
-        <p data-key="hero1_text">Accede a herramientas digitales y acompañamiento psicológico adaptado a tus necesidades.</p>
-        <a href="#patients" class="btn-main" data-key="hero1_btn">Comenzar evaluación</a>
-      </div>
-      <div class="hero-image">
-        <img src="imgs/slide1.png" alt="AuraNeuro pacientes bienestar">
+      <div class="value-cards">
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <h3 data-key="feature_1_title">Búsqueda inteligente</h3>
+          <p>
+            <span data-key="feature_1_text">Encuentra canchas por ubicación, deporte, precio y horario
+            según lo que realmente necesitas.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3 data-key="feature_2_title">Reservas rápidas</h3>
+          <p>
+            <span data-key="feature_2_text">Consulta disponibilidad en tiempo real y confirma tu reserva
+            en pocos pasos desde tu celular.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-credit-card"></i></div>
+          <h3 data-key="feature_3_title">Pagos digitales</h3>
+          <p>
+            <span data-key="feature_3_text">Completa el proceso de forma más cómoda y segura
+            sin salir de la aplicación.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-user-group"></i></div>
+          <h3 data-key="feature_4_title">Entrenadores confiables</h3>
+          <p>
+            <span data-key="feature_4_text">Conecta con entrenadores independientes, revisa sus perfiles
+            y organiza sesiones deportivas con mayor confianza.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-star"></i></div>
+          <h3 data-key="feature_5_title">Reseñas y valoraciones</h3>
+          <p>
+            <span data-key="feature_5_text">Toma mejores decisiones con opiniones y calificaciones
+            de otros usuarios dentro de la plataforma.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon"><i class="fa-solid fa-bell"></i></div>
+          <h3 data-key="feature_6_title">Notificaciones útiles</h3>
+          <p>
+            <span data-key="feature_6_text">Recibe confirmaciones, cambios y recordatorios
+            importantes sobre tus reservas y actividades.</span>
+          </p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="carousel-slide">
-      <div class="hero-content">
-        <h1 data-key="hero2_title">Gestiona tus pacientes<br>y tu práctica terapéutica de forma inteligente</h1>
-        <p data-key="hero2_text">Administra sesiones, registros y progreso desde una sola plataforma diseñada para ti.</p>
-        <a href="#professionals" class="btn-main" data-key="hero2_btn">Optimizar mi práctica</a>
-      </div>
-      <div class="hero-image">
-        <img src="imgs/slide2.png" alt="AuraNeuro profesionales gestión">
-      </div>
-    </div>
-
-    <div class="carousel-slide">
-      <div class="hero-content">
-        <h1 data-key="hero3_title">Integra tu tecnología<br>al futuro de la neurología digital</h1>
-        <p data-key="hero3_text">Colabora con AuraNeuro y conecta tus dispositivos médicos mediante integraciones API seguras, compatibles con estándares internacionales.</p>
-        <a href="#contact" class="btn-main" data-key="hero3_btn">Explorar integraciones</a>
-      </div>
-      <div class="hero-image">
-        <img src="imgs/slide3.png" alt="AuraNeuro integración tecnológica">
-      </div>
-    </div>
-  </div>
-
-  <button class="carousel-control prev"><i class="fa-solid fa-chevron-left"></i></button>
-  <button class="carousel-control next"><i class="fa-solid fa-chevron-right"></i></button>
-
-  <div class="carousel-indicators">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</section>
-
-<!-- ==== FEATURES ==== -->
-<section id="features" class="value-prop-slider">
-
-  <h2 data-key="features_title">¿Por qué AuraNeuro?</h2>
-  <p class="subtitle" data-key="features_subtitle">
-    AuraNeuro impulsa a profesionales de la salud y pacientes con evaluaciones neurológicas 
-    basadas en IA — permitiendo diagnóstico temprano, monitoreo continuo y decisiones clínicas 
-    basadas en datos.
-  </p>
-
-  <div class="value-cards">
-    <div class="card">
-      <i class="fa-solid fa-microscope"></i>
-      <h3 data-key="feature_card1_title">Diagnóstico temprano</h3>
-      <p data-key="feature_card1_text">Detecta señales neurológicas desde etapas iniciales con inteligencia artificial.</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-chart-line"></i>
-      <h3 data-key="feature_card2_title">Monitoreo continuo</h3>
-      <p data-key="feature_card2_text">Seguimiento preciso de cambios cognitivos y motores a lo largo del tiempo.</p>
-    </div>
-    <div class="card">
-      <i class="fa-solid fa-brain"></i>
-      <h3 data-key="feature_card3_title">Decisiones basadas en datos</h3>
-      <p data-key="feature_card3_text">Toma decisiones clínicas con reportes automáticos y análisis detallado.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ==== ABOUT ==== -->
-<section id="about" class="audience-benefits">
-  <h2 data-key="about_title">Beneficios</h2>
-
-  <div class="benefit-slider">
-    <div class="benefit-track">
-
-      <div class="benefit-card active">
-        <div class="emoji">💚</div>
-        <h3 data-key="about_card1_title">Pacientes</h3>
-        <p data-key="about_card1_text">
-          AuraNeuro te acompaña en tu proceso de bienestar emocional, ofreciendo evaluaciones 
-          digitales accesibles desde tu móvil. Recibe orientación basada en IA y recursos 
-          personalizados que ayudan a mejorar tu calidad de vida, con monitoreo constante 
-          de tu progreso y alertas tempranas ante cambios significativos.
-        </p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="emoji">🧑‍⚕️</div>
-        <h3 data-key="about_card2_title">Profesionales de la salud</h3>
-        <p data-key="about_card2_text">
-          Optimiza tu práctica clínica con paneles de métricas cognitivas y reportes automáticos. 
-          AuraNeuro transforma los datos de tus pacientes en insights útiles para diagnósticos más 
-          precisos, seguimiento detallado y colaboración interdisciplinaria dentro del ecosistema digital.
-        </p>
-      </div>
-
-      <div class="benefit-card">
-        <div class="emoji">🏢</div>
-        <h3 data-key="about_card3_title">Empresas tecnológicas</h3>
-        <p data-key="about_card3_text">
-          Integra tus soluciones con AuraNeuro mediante APIs seguras y estándares internacionales. 
-          Accede a datos anonimizados para investigación, mejora tus productos y forma parte de 
-          un ecosistema médico-digital interoperable orientado al bienestar mental global.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==== HOW ==== -->
-<section id="how" class="how-it-works">
+  <!-- ===== BENEFITS ===== -->
+  <section id="benefits" class="audience-benefits section-soft">
   <div class="container">
-    <div class="how-content">
-      <div class="steps-column">
-        <h2 data-key="how_title">Cómo funciona</h2>
-        <p class="subtitle" data-key="how_subtitle">Selecciona tu perfil para ver cómo funciona AuraNeuro.</p>
+    <h2 data-key="benefits_title">Beneficios para cada perfil</h2>
+    <p class="subtitle">
+      <span data-key="benefits_subtitle">Courtly está diseñado para resolver problemas reales del deporte amateur.</span>
+    </p>
 
-        <div class="how-selector">
-          <button class="how-icon active" data-target="paciente">
-            <i class="fa-solid fa-user"></i>
-          </button>
+    <div class="benefit-slider">
+      <div class="benefit-track">
 
-          <button class="how-icon" data-target="profesional">
-            <i class="fa-solid fa-stethoscope"></i>
-          </button>
-
-          <button class="how-icon" data-target="empresarial">
-            <i class="fa-solid fa-building"></i>
-          </button>
+        <div class="benefit-card active">
+          <div class="benefit-symbol"><i class="fa-solid fa-futbol"></i></div>
+          <h3 data-key="benefit_1_title">Deportistas aficionados</h3>
+          <p>
+            <span data-key="benefit_1_text">Organiza tus partidos de forma más rápida, encuentra canchas
+            disponibles y evita procesos desordenados que hacen perder tiempo.</span>
+          </p>
         </div>
 
-        <div class="steps">
-          <div class="step-card">
-            <div class="step-number">1</div>
-            <div class="step-info">
-              <h3 data-key="how_step1_title">Regístrate</h3>
-              <p data-key="how_step1_text">Configura tu perfil personal y elige tus objetivos emocionales y cognitivos.</p>
-            </div>
+        <div class="benefit-card">
+          <div class="benefit-symbol"><i class="fa-solid fa-dumbbell"></i></div>
+          <h3 data-key="benefit_2_title">Entrenadores independientes</h3>
+          <p>
+            <span data-key="benefit_2_text">Muestra tus servicios, mejora tu visibilidad y gestiona reservas,
+            horarios y pagos con una imagen más profesional.</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section id="how" class="how-it-works section-light">
+    <div class="container">
+      <div class="how-content">
+
+        <div class="steps-column">
+          <h2 data-key="how_title">Cómo funciona</h2>
+          <p class="subtitle">
+            <span data-key="how_subtitle">Selecciona tu perfil y descubre cómo Courtly se adapta a ti.</span>
+          </p>
+
+          <div class="how-selector">
+            <button class="how-icon active" data-target="jugador" aria-label="Jugador">
+              <i class="fa-solid fa-futbol"></i>
+            </button>
+
+            <button class="how-icon" data-target="entrenador" aria-label="Entrenador">
+              <i class="fa-solid fa-dumbbell"></i>
+            </button>
           </div>
 
-          <div class="step-card">
-            <div class="step-number">2</div>
-            <div class="step-info">
-              <h3 data-key="how_step2_title">Realiza evaluaciones</h3>
-              <p data-key="how_step2_text">Completa pruebas neurológicas y emocionales guiadas por IA desde cualquier dispositivo.</p>
+          <div class="steps">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-info">
+                <h3 id="how-step1-title">Busca opciones</h3>
+                <p id="how-step1-text">
+                  Explora canchas por ubicación, deporte, precio y horario.
+                </p>
+              </div>
             </div>
+
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-info">
+                <h3 id="how-step2-title">Compara y reserva</h3>
+                <p id="how-step2-text">
+                  Revisa disponibilidad real, elige la mejor opción y confirma tu reserva.
+                </p>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <div class="step-info">
+                <h3 id="how-step3-title">Juega y califica</h3>
+                <p id="how-step3-text">
+                  Realiza tu actividad, recibe notificaciones y comparte tu experiencia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-column">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&controls=1"
+              title="Presentación Courtly"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLANS ===== -->
+  <section id="plans" class="pricing-section section-soft">
+    <div class="container">
+      <h2 data-key="plans_title">Planes</h2>
+      <p class="subtitle">
+        <span data-key="plans_subtitle">Elige la opción que mejor se adapte a tu experiencia dentro de Courtly.</span>
+      </p>
+
+      <div class="pricing-cards">
+        <div class="plan-card">
+          <span class="plan-badge" data-key="plan_player_badge">Jugador</span>
+          <h3 data-key="plan_player_title">Jugador Courtly</h3>
+          <div class="price">
+            <span class="currency">S/</span>
+            <span class="amount">9</span>
+            <span class="period" data-key="plan_player_period">/mes</span>
           </div>
 
-          <div class="step-card">
-            <div class="step-number">3</div>
-            <div class="step-info">
-              <h3 data-key="how_step3_title">Recibe tus reportes</h3>
-              <p data-key="how_step3_text">Obtén análisis claros de tu bienestar y recomendaciones para mejorar día a día.</p>
-            </div>
+          <ul class="features">
+            <li data-key="plan_player_1">Buscar canchas por ubicación</li>
+            <li data-key="plan_player_2">Filtrar por deporte, precio y horario</li>
+            <li data-key="plan_player_3">Ver detalles de cancha</li>
+            <li data-key="plan_player_4">Reservar desde la app</li>
+            <li data-key="plan_player_5">Pagos digitales</li>
+            <li data-key="plan_player_6">Crear y unirse a partidos</li>
+          </ul>
+
+          <a href="#cta" class="btn-main" data-key="plan_player_cta">Elegir plan</a>
+        </div>
+
+        <div class="plan-card featured">
+          <span class="plan-badge highlight-badge" data-key="plan_trainer_badge">Entrenador</span>
+          <h3 data-key="plan_trainer_title">Entrenador Courtly</h3>
+          <div class="price">
+            <span class="currency">S/</span>
+            <span class="amount">19</span>
+            <span class="period" data-key="plan_trainer_period">/mes</span>
           </div>
+
+          <ul class="features">
+            <li data-key="plan_trainer_1">Perfil profesional visible</li>
+            <li data-key="plan_trainer_2">Publicación de disponibilidad</li>
+            <li data-key="plan_trainer_3">Gestión de solicitudes</li>
+            <li data-key="plan_trainer_4">Visualización de pagos</li>
+            <li data-key="plan_trainer_5">Recepción de reseñas</li>
+            <li data-key="plan_trainer_6">Estadísticas de rendimiento</li>
+          </ul>
+
+          <a href="#cta" class="btn-main" data-key="plan_trainer_cta">Elegir plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section id="team" class="team-section section-light">
+    <div class="container">
+      <h2 data-key="team_title">Conoce al equipo</h2>
+      <p class="subtitle">
+        <span data-key="team_subtitle">Detrás de <strong>Courtly</strong> está <strong>Mova</strong>, un equipo enfocado en
+        crear una experiencia más eficiente para la organización deportiva.</span>
+      </p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="imgs/Juan.jpg" alt="Juan Carlos Angulo">
+          <h4>Angulo Abud, Juan Carlos</h4>
+        </div>
+
+        <div class="team-member">
+          <img src="imgs/Eduardo.jpg" alt="Eduardo Fabian Chacaliaza">
+          <h4>Chacaliaza Minaya, Eduardo Fabian</h4>
+        </div>
+
+        <div class="team-member">
+          <img src="imgs/Camilla.jpg" alt="Camilla Espinoza">
+          <h4>Espinoza Vivas, Camilla Leonor</h4>
+        </div>
+
+        <div class="team-member">
+          <img src="imgs/Pedro.jpg" alt="Pedro Nanfuñay">
+          <h4>Nanfuñay Liza, Pedro Jesús</h4>
+        </div>
+
+        <div class="team-member">
+          <img src="imgs/Fabricio.jpg" alt="Fabricio Quispe">
+          <h4>Quispe Barzola, Fabricio Fabian</h4>
         </div>
       </div>
 
-      <div class="video-column">
-        <div class="video-wrapper">
+      <div class="team-row-horizontal">
+        <div class="video-wrapper clean">
           <iframe
-            src="https://www.youtube.com/embed/hK7kSaYTNz8?rel=0&controls=1"
-            title="About AuraNeuro"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&controls=1"
+            title="Video del equipo Courtly"
             frameborder="0"
             allowfullscreen>
           </iframe>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+        <div class="mission-vision-column">
+          <div class="info-card modern">
+            <i class="fa-solid fa-bullseye"></i>
+            <h3 data-key="mission_title">Misión</h3>
+            <p>
+              <span data-key="mission_text">Facilitar la organización de actividades deportivas conectando
+              a jugadores, canchas y entrenadores en una sola plataforma digital.</span>
+            </p>
+          </div>
 
-<!-- ==== PLANS ==== -->
-<section id="plans" class="pricing-section">
-  <div class="container">
-    <h2 data-key="plans_title">Elige tu plan</h2>
-    <p class="subtitle" data-key="plans_subtitle">Accede a evaluaciones neurológicas avanzadas adaptadas a tus necesidades.</p>
-
-    <div class="pricing-cards">
-
-      <!-- PLAN PLUS -->
-      <div class="plan-card">
-        <h3 data-key="plan_plus_title">Paciente</h3>
-        <div class="price">
-          <span class="currency">USD</span>
-          <span class="amount">19</span>
-          <span class="period" data-key="plan_period">/mes</span>
-        </div>
-        <ul class="features">
-          <li data-key="plan_paciente_item1">✔ Evaluaciones neurológicas básicas</li>
-          <li data-key="plan_paciente_item2">✔ Reportes de bienestar emocional</li>
-          <li data-key="plan_paciente_item3">✔ Seguimiento del progreso mensual</li>
-          <li data-key="plan_paciente_item4">✔ Recomendaciones personalizadas con IA</li>
-          <li data-key="plan_paciente_item5">✔ Acceso a recursos educativos</li>
-          <li data-key="plan_paciente_item6">✔ Soporte por correo</li>
-        </ul>
-        <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-main" data-key="plan_btn">Suscribirse</a>
-      </div>
-
-      <!-- PLAN PRO -->
-      <div class="plan-card">
-        <h3 data-key="plan_pro_title">Profesional</h3>
-        <div class="price">
-          <span class="currency">USD</span>
-          <span class="amount">49</span>
-          <span class="period" data-key="plan_period">/mes</span>
-        </div>
-        <ul class="features">
-          <li data-key="plan_profesional_item1">✔ Evaluaciones ilimitadas para pacientes</li>
-          <li data-key="plan_profesional_item2">✔ Análisis emocional y cognitivo avanzado con IA</li>
-          <li data-key="plan_profesional_item3">✔ Reportes automáticos y profesionales</li>
-          <li data-key="plan_profesional_item4">✔ Panel clínico para gestión de pacientes</li>
-          <li data-key="plan_profesional_item5">✔ Monitoreo cognitivo en tiempo real</li>
-          <li data-key="plan_profesional_item6">✔ Indicadores de progreso objetivos</li>
-        </ul>
-        <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-main" data-key="plan_btn">Suscribirse</a>
-      </div>
-
-      <!-- PLAN ENTERPRISE -->
-      <div class="plan-card">
-        <h3 data-key="plan_enterprise_title">Empresarial</h3>
-        <div class="price">
-          <span class="currency">USD</span>
-          <span class="amount">99</span>
-          <span class="period" data-key="plan_period">/mes</span>
-        </div>
-        <ul class="features">
-          <li data-key="plan_empresarial_item1">✔ Integración mediante API segura</li>
-          <li data-key="plan_empresarial_item2">✔ Acceso a datos anonimizados para investigación</li>
-          <li data-key="plan_empresarial_item3">✔ Panel multiusuario para equipos</li>
-          <li data-key="plan_empresarial_item4">✔ Reportes de métricas organizacionales</li>
-          <li data-key="plan_empresarial_item5">✔ Consultoría técnica personalizada</li>
-          <li data-key="plan_empresarial_item6">✔ SLA corporativo</li>
-        </ul>
-        <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-main" data-key="plan_btn">Suscribirse</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ==== TEAM ==== -->
-<section id="team" class="team-section">
-  <div class="container">
-    <h2 data-key="team_title">Conoce al equipo</h2>
-    <p class="subtitle" data-key="team_subtitle">
-      Detrás de <strong>AuraNeuro</strong> está un grupo de profesionales comprometidos con transformar la salud mental 
-      a través de la inteligencia artificial, la empatía y la innovación interdisciplinaria.
-    </p>
-
-    <div class="team-grid">
-      <div class="team-member">
-        <img src="imgs/Jhimy.jpg" alt="Jhimy">
-        <h4 data-key="team_jhimy">Meza Jhimy Pool, Romero</h4>
-      </div>
-      <div class="team-member">
-        <img src="imgs/Eduardo.jpg" alt="Eduardo">
-        <h4 data-key="team_eduardo">Chacaliaza Minaya, Eduardo Fabian</h4>
-      </div>
-      <div class="team-member">
-        <img src="imgs/Juan.jpg" alt="Juan">
-        <h4 data-key="team_juan">Meza Huanacune, Juan José</h4>
-      </div>
-      <div class="team-member">
-        <img src="imgs/Fabricio.jpg" alt="Fabricio">
-        <h4 data-key="team_fabricio">Quispe Barzola, Fabricio Fabian</h4>
-      </div>
-      <div class="team-member">
-        <img src="imgs/Stanley.jpg" alt="Stanley">
-        <h4 data-key="team_stanley">Gutierrez Tume, Stanley Jeremy</h4>
-      </div>
-    </div>
-
-    <div class="team-row-horizontal">
-      <div class="video-wrapper clean">
-        <iframe 
-          src="https://www.youtube.com/embed/mHxw47HAfVY?rel=0&controls=1" 
-          title="Video del equipo AuraNeuro"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <div class="mission-vision-column">
-        <div class="info-card modern">
-          <i class="fa-solid fa-bullseye"></i>
-          <h3 data-key="team_mission_title">Misión</h3>
-          <p data-key="team_mission_text">
-            Impulsar la innovación en neurotecnología para que las evaluaciones cognitivas 
-            y emocionales sean accesibles, precisas y humanas. Conectamos ciencia y tecnología 
-            con empatía, promoviendo un bienestar mental sostenible en la sociedad.
-          </p>
-        </div>
-
-        <div class="info-card modern">
-          <i class="fa-solid fa-eye"></i>
-          <h3 data-key="team_vision_title">Visión</h3>
-          <p data-key="team_vision_text">
-            Ser líderes en soluciones digitales para la neurociencia aplicada, 
-            creando un ecosistema donde la inteligencia artificial colabore con los profesionales 
-            de la salud para mejorar la calidad de vida y el acceso al bienestar emocional global.
-          </p>
+          <div class="info-card modern">
+            <i class="fa-solid fa-eye"></i>
+            <h3 data-key="vision_title">Visión</h3>
+            <p>
+              <span data-key="vision_text">Convertirnos en una referencia de la digitalización del deporte amateur,
+              brindando una experiencia más rápida, confiable y accesible.</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ==== TESTIMONIALS ==== -->
-<section id="testimonials" class="testimonials">
-  <h2 data-key="testimonials_title">Testimonios</h2>
-  <p class="subtitle" data-key="testimonials_subtitle">
-    Descubre cómo AuraNeuro impulsa a pacientes, profesionales y organizaciones hacia un bienestar mental más conectado y humano.
-  </p>
-
-  <div class="testimonial-carousel">
-    <div class="testimonial-track" data-duplicate="">
-
-      <div class="testimonial-card">
-        <img src="imgs/test1.jpg" alt="Foto Mariana C.">
-        <p data-key="testimonial_1_text">“Desde que uso AuraNeuro, mis sesiones son más efectivas y personalizadas.”</p>
-        <h4 data-key="testimonial_1_name">Mariana C.</h4>
-      </div>
-
-      <div class="testimonial-card">
-        <img src="imgs/test2.jpg" alt="Foto Dr. Carlos G.">
-        <p data-key="testimonial_2_text">“Como neurólogo, AuraNeuro me ofrece métricas objetivas y un seguimiento real del progreso.”</p>
-        <h4 data-key="testimonial_2_name">Dr. Carlos G.</h4>
-      </div>
-
-      <div class="testimonial-card">
-        <img src="imgs/test3.jpg" alt="Foto Tech Wearables">
-        <p data-key="testimonial_3_text">“Integrar nuestros sensores IoT con AuraNeuro fue rápido y seguro. Excelente API.”</p>
-        <h4 data-key="testimonial_3_name">Tech Wearables S.A.</h4>
-      </div>
-
-      <div class="testimonial-card">
-        <img src="imgs/test4.jpg" alt="Foto Dra. Sofía M.">
-        <p data-key="testimonial_4_text">“Los reportes automáticos me ahorran horas y mejoran mis decisiones clínicas.”</p>
-        <h4 data-key="testimonial_4_name">Dra. Sofía M.</h4>
-      </div>
-
-      <div class="testimonial-card">
-        <img src="imgs/test5.jpg" alt="Foto Clínica StarSalud">
-        <p data-key="testimonial_5_text">“Con AuraNeuro hemos optimizado la atención cognitiva de nuestros pacientes.”</p>
-        <h4 data-key="testimonial_5_name">Clínica NeuroViva</h4>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==== CTA ==== -->
-<section id="cta" class="cta-segmented">
-  <h2 data-key="cta_title">Da el siguiente paso con AuraNeuro</h2>
-  <p class="subtitle" data-key="cta_subtitle">
-    Elige cómo deseas impulsar el bienestar neurológico con nuestras soluciones.
-  </p>
-
-  <div class="cta-cards">
-
-  <!-- CTA 1: Pacientes -->
-  <div class="cta-card">
-    <div class="emoji">💚</div>
-    <h3 data-key="cta_1_title">Pacientes</h3>
-    <p data-key="cta_1_text">Recupera tu bienestar emocional con evaluaciones personalizadas y seguimiento inteligente.</p>
-    <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-cta" data-key="cta_1_btn">Comenzar evaluación</a>
-  </div>
-
-  <!-- CTA 2: Profesionales -->
-  <div class="cta-card">
-    <div class="emoji">🧑‍⚕️</div>
-    <h3 data-key="cta_2_title">Profesionales</h3>
-    <p data-key="cta_2_text">Optimiza tu práctica con reportes automáticos, métricas objetivas y análisis con IA.</p>
-    <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-cta" data-key="cta_2_btn">Optimizar mi práctica</a>
-  </div>
-
-  <!-- CTA 3: Empresas tecnológicas -->
-  <div class="cta-card">
-    <div class="emoji">🏢</div>
-    <h3 data-key="cta_3_title">Empresas tecnológicas</h3>
-    <p data-key="cta_3_text">Conecta tus soluciones con AuraNeuro mediante integraciones API seguras y rápidas.</p>
-    <a href="https://frontend-auro-neuro-two.vercel.app/" class="btn-cta" data-key="cta_3_btn">Explorar integraciones</a>
-  </div>
-
-  </div>
-</section>
-
-<!-- ==== FOOTER ==== -->
-<footer class="footer">
-  <div class="footer-container">
-    
-    <!-- Marca y descripción -->
-    <div class="footer-col brand">
-      <h3 class="logo"><span class="highlight">Aura</span>Neuro</h3>
-      <p data-key="footer_description">
-        Evaluaciones neurológicas impulsadas por IA, seguras, inteligentes y accesibles 
-        para profesionales, pacientes y organizaciones.
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="testimonials section-soft">
+    <div class="container">
+      <h2 data-key="testimonials_title">Testimonios</h2>
+      <p class="subtitle">
+        <span data-key="testimonials_subtitle">Courtly nace para resolver situaciones que viven jugadores y entrenadores todos los días.</span>
       </p>
-    </div>
 
-    <!-- Enlaces -->
-    <div class="footer-col">
-      <h4 data-key="footer_links_title">Enlaces</h4>
-      <ul>
-        <li><a href="#home" data-key="footer_link_home">Inicio</a></li>
-        <li><a href="#features" data-key="footer_link_features">Características</a></li>
-        <li><a href="#about" data-key="footer_link_about">Sobre Nosotros</a></li>
-        <li><a href="#plans" data-key="footer_link_plans">Planes</a></li>
-        <li><a href="#testimonials" data-key="footer_link_testimonials">Testimonios</a></li>
-      </ul>
-    </div>
+      <div class="testimonial-carousel">
+        <div class="testimonial-track">
 
-    <!-- Legal -->
-    <div class="footer-col">
-      <h4 data-key="footer_legal_title">Legal</h4>
-      <ul>
-        <li><a href="terminos.html" data-key="footer_legal_terms">Términos y condiciones</a></li>
-        <li><a href="privacidad.html" data-key="footer_legal_privacy">Política de privacidad</a></li>
-      </ul>
-    </div>
+          <div class="testimonial-card">
+            <img src="imgs/test5.jpg" alt="Valeria Rojas">
+            <p>
+              <span data-key="testimonial_1_text">“Me ayuda a organizar partidos sin depender de mil mensajes. Puedo ver opciones,
+              coordinar con mi grupo y reservar con más seguridad.”</span>
+            </p>
+            <h4>Valeria Rojas</h4>
+            <span data-key="testimonial_1_role">Jugadora aficionada</span>
+          </div>
 
-    <!-- Redes sociales -->
-    <div class="footer-col social">
-      <h4 data-key="footer_social_title">Síguenos</h4>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <div class="testimonial-card">
+            <img src="imgs/test4.jpg" alt="Mateo Salazar">
+            <p>
+              <span data-key="testimonial_2_text">“Lo mejor es encontrar canchas disponibles rápido. Para los partidos de fin de semana,
+              tener horarios y precios claros hace toda la diferencia.”</span>
+            </p>
+            <h4>Mateo Salazar</h4>
+            <span data-key="testimonial_2_role">Jugador aficionado</span>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="imgs/test2.jpg" alt="Camila Herrera">
+            <p>
+              <span data-key="testimonial_3_text">“Antes perdíamos mucho tiempo preguntando por disponibilidad. Con una app así,
+              reservar se siente más simple, ordenado y confiable.”</span>
+            </p>
+            <h4>Camila Herrera</h4>
+            <span data-key="testimonial_3_role">Jugadora aficionada</span>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="imgs/test1.jpg" alt="Diego Morales">
+            <p>
+              <span data-key="testimonial_4_text">“Como entrenador, tener un perfil visible y horarios organizados me ayuda a mostrar
+              mejor mi servicio y responder solicitudes con más rapidez.”</span>
+            </p>
+            <h4>Diego Morales</h4>
+            <span data-key="testimonial_4_role">Entrenador independiente</span>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="imgs/test6.jpg" alt="Lucía Fernández">
+            <p>
+              <span data-key="testimonial_5_text">“Poder gestionar sesiones, reservas y pagos desde un solo lugar mejora la experiencia
+              para mis alumnos y le da más confianza a mi trabajo.”</span>
+            </p>
+            <h4>Lucía Fernández</h4>
+            <span data-key="testimonial_5_role">Entrenadora deportiva</span>
+          </div>
+
+          <div class="testimonial-card">
+            <img src="imgs/test3.jpg" alt="Andrés Castillo">
+            <p>
+              <span data-key="testimonial_6_text">“Las reseñas y la disponibilidad visible pueden ayudar mucho a crecer como entrenador.
+              Es una forma más profesional de conectar con nuevos alumnos.”</span>
+            </p>
+            <h4>Andrés Castillo</h4>
+            <span data-key="testimonial_6_role">Coach deportivo</span>
+          </div>
+
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Línea inferior -->
-  <div class="footer-bottom">
-    <p data-key="footer_bottom_text">
-      © 2025 <span class="highlight">AuraNeuro</span>. Todos los derechos reservados.
-    </p>
-  </div>
-</footer>
+  <!-- ===== CTA ===== -->
+  <section id="cta" class="cta-segmented">
+    <div class="container">
+      <h2 data-key="cta_title">Empieza a vivir una experiencia deportiva más simple</h2>
+      <p class="subtitle">
+        <span data-key="cta_subtitle">Menos desorden, menos tiempo perdido y más deporte con Courtly.</span>
+      </p>
+
+      <div class="cta-cards">
+        <div class="cta-card">
+          <div class="cta-symbol"><i class="fa-solid fa-futbol"></i></div>
+          <h3 data-key="cta_player_title">Quiero jugar</h3>
+          <p>
+            <span data-key="cta_player_text">Busca canchas, compara horarios y reserva en minutos para pasar menos tiempo coordinando y más tiempo jugando.</span>
+          </p>
+          <a href="#plans" class="btn-cta" data-key="cta_player_btn">Ver plan jugador</a>
+        </div>
+
+        <div class="cta-card">
+          <div class="cta-symbol"><i class="fa-solid fa-dumbbell"></i></div>
+          <h3 data-key="cta_trainer_title">Soy entrenador</h3>
+          <p>
+            <span data-key="cta_trainer_text">Publica tu perfil, muestra disponibilidad y gestiona solicitudes con una experiencia más clara y profesional.</span>
+          </p>
+          <a href="#plans" class="btn-cta" data-key="cta_trainer_btn">Ver plan entrenador</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-col brand">
+        <h3 class="logo-text">COURTLY</h3>
+        <p>
+          <span data-key="footer_brand_text">Plataforma móvil para buscar canchas, reservar espacios deportivos,
+          conectar con entrenadores y organizar actividades de forma rápida y confiable.</span>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-key="footer_links">Enlaces</h4>
+        <ul>
+          <li><a href="#home" data-key="nav_home">Inicio</a></li>
+          <li><a href="#features" data-key="nav_features">Características</a></li>
+          <li><a href="#benefits" data-key="nav_benefits">Beneficios</a></li>
+          <li><a href="#plans" data-key="nav_plans">Planes</a></li>
+          <li><a href="#testimonials" data-key="nav_testimonials">Testimonios</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 data-key="footer_legal">Legal</h4>
+        <ul>
+          <li><a href="terminos.html" data-key="legal_terms">Términos y condiciones</a></li>
+          <li><a href="privacidad.html" data-key="legal_privacy">Política de privacidad</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col social">
+        <h4 data-key="footer_social">Síguenos</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p data-key="footer_copy">© 2026 Courtly. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
