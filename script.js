@@ -1,225 +1,207 @@
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".navbar");
-  const navItems = document.querySelectorAll(".nav-item");
+  const navLinks = document.querySelectorAll(".nav-item");
   const sections = document.querySelectorAll("section[id]");
 
-  // ===== Header con sombra al hacer scroll =====
+  // ==== Cambia estilo del header al hacer scroll ====
   window.addEventListener("scroll", () => {
-    if (header) {
-      header.classList.toggle("scrolled", window.scrollY > 50);
-    }
+    header.classList.toggle("scrolled", window.scrollY > 50);
   });
 
-  // ===== Link activo en navbar según sección =====
-  function updateActiveNav() {
-    const scrollY = window.scrollY + 140;
-
+  // ==== Marca el link activo ====
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY + 150;
     sections.forEach((section) => {
       const top = section.offsetTop;
       const height = section.offsetHeight;
       const id = section.getAttribute("id");
-
       if (scrollY >= top && scrollY < top + height) {
-        navItems.forEach((link) => link.classList.remove("active"));
+        navLinks.forEach((link) => link.classList.remove("active"));
         document.querySelector(`.nav-item[href="#${id}"]`)?.classList.add("active");
       }
     });
-  }
+  });
 
-  window.addEventListener("scroll", updateActiveNav);
-  updateActiveNav();
-
-  // ===== Scroll suave =====
+  // ==== Scroll suave ====
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
-      const href = anchor.getAttribute("href");
-      const target = document.querySelector(href);
-
+      const target = document.querySelector(anchor.getAttribute("href"));
       if (target) {
         e.preventDefault();
-        window.scrollTo({
-          top: target.offsetTop - 80,
-          behavior: "smooth",
-        });
-
-        // cerrar menú móvil si está abierto
-        navLinks?.classList.remove("active");
+        window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
       }
     });
   });
+});
 
-  // ===== Menú móvil =====
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if (menuToggle && navLinks) {
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  }
-
-  // ===== Hero carousel =====
-  const slides = document.querySelectorAll(".carousel-slide");
-  const dots = document.querySelectorAll(".dot");
-  const nextBtn = document.querySelector(".carousel-control.next");
-  const prevBtn = document.querySelector(".carousel-control.prev");
-  const carouselContainer = document.querySelector(".carousel-container");
-
-  if (slides.length > 0 && carouselContainer) {
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    let autoPlayInterval = null;
-
-    const updateCarousel = (index) => {
-      carouselContainer.style.transform = `translateX(-${index * 100}%)`;
-
-      dots.forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-      });
-    };
-
-    const nextSlide = () => {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateCarousel(currentIndex);
-    };
-
-    const prevSlide = () => {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateCarousel(currentIndex);
-    };
-
-    const startAutoPlay = () => {
-      autoPlayInterval = setInterval(nextSlide, 7000);
-    };
-
-    const resetAutoPlay = () => {
-      if (autoPlayInterval) clearInterval(autoPlayInterval);
-      startAutoPlay();
-    };
-
-    nextBtn?.addEventListener("click", () => {
-      nextSlide();
-      resetAutoPlay();
-    });
-
-    prevBtn?.addEventListener("click", () => {
-      prevSlide();
-      resetAutoPlay();
-    });
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        currentIndex = i;
-        updateCarousel(currentIndex);
-        resetAutoPlay();
-      });
-    });
-
-    updateCarousel(currentIndex);
-    startAutoPlay();
-  }
-
-  // ===== Benefits cards =====
-  const benefitCards = document.querySelectorAll(".benefit-card");
-  let activeBenefitIndex = 0;
-
-  function updateBenefitCards() {
-    benefitCards.forEach((card, i) => {
-      card.classList.remove("active");
-      if (i === activeBenefitIndex) {
-        card.classList.add("active");
-      }
-    });
-  }
-
-  benefitCards.forEach((card, i) => {
-    card.addEventListener("click", () => {
-      activeBenefitIndex = i;
-      updateBenefitCards();
-    });
+// ==== Menú móvil ====
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
   });
+}
 
-  if (benefitCards.length > 0) {
-    updateBenefitCards();
-  }
+// ==== Carrusel Hero ====
+const slides = document.querySelectorAll(".carousel-slide");
+const dots = document.querySelectorAll(".dot");
+const nextBtn = document.querySelector(".carousel-control.next");
+const prevBtn = document.querySelector(".carousel-control.prev");
+const carouselContainer = document.querySelector(".carousel-container");
+const heroSection = document.querySelector(".hero-carousel");
 
-  // ===== Testimonial carousel infinito =====
-  const testimonialTrack = document.querySelector(".testimonial-track");
+if (slides.length && carouselContainer && heroSection) {
+  let currentIndex = 0;
+  const totalSlides = slides.length;
+  let autoPlayInterval;
 
-  if (testimonialTrack && !testimonialTrack.dataset.cloned) {
-    const cards = Array.from(testimonialTrack.children);
-
-    cards.forEach((card) => {
-      testimonialTrack.appendChild(card.cloneNode(true));
-    });
-
-    testimonialTrack.dataset.cloned = "true";
-  }
-
-  // ===== Cómo funciona =====
-  const howData = {
-    jugador: {
-      step1: {
-        title: "Busca opciones",
-        text: "Explora canchas por ubicación, deporte, precio y horario."
-      },
-      step2: {
-        title: "Compara y reserva",
-        text: "Revisa disponibilidad real, selecciona la mejor opción y confirma tu reserva."
-      },
-      step3: {
-        title: "Juega y califica",
-        text: "Realiza tu actividad, recibe notificaciones y comparte tu experiencia con reseñas."
-      }
-    },
-    entrenador: {
-      step1: {
-        title: "Crea tu perfil",
-        text: "Muestra tu experiencia, especialidad, horarios y disponibilidad en la plataforma."
-      },
-      step2: {
-        title: "Gestiona solicitudes",
-        text: "Recibe reservas de entrenamiento y organiza mejor tu agenda profesional."
-      },
-      step3: {
-        title: "Haz crecer tu servicio",
-        text: "Recibe pagos, reseñas y fortalece tu visibilidad dentro del ecosistema Courtly."
-      }
-    }
+  const updateCarousel = (index) => {
+    carouselContainer.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
   };
 
-  const howIcons = document.querySelectorAll(".how-icon");
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel(currentIndex);
+  };
 
-  function updateHowContent(segment) {
-    const content = howData[segment];
-    if (!content) return;
+  const prevSlide = () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel(currentIndex);
+  };
 
-    const step1Title = document.getElementById("how-step1-title");
-    const step1Text = document.getElementById("how-step1-text");
-    const step2Title = document.getElementById("how-step2-title");
-    const step2Text = document.getElementById("how-step2-text");
-    const step3Title = document.getElementById("how-step3-title");
-    const step3Text = document.getElementById("how-step3-text");
-
-    if (step1Title) step1Title.textContent = content.step1.title;
-    if (step1Text) step1Text.textContent = content.step1.text;
-    if (step2Title) step2Title.textContent = content.step2.title;
-    if (step2Text) step2Text.textContent = content.step2.text;
-    if (step3Title) step3Title.textContent = content.step3.title;
-    if (step3Text) step3Text.textContent = content.step3.text;
-
-    howIcons.forEach((btn) => btn.classList.remove("active"));
-    document.querySelector(`.how-icon[data-target="${segment}"]`)?.classList.add("active");
-  }
-
-  howIcons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const segment = btn.getAttribute("data-target");
-      updateHowContent(segment);
-    });
+  nextBtn?.addEventListener("click", () => { nextSlide(); resetAutoPlay(); });
+  prevBtn?.addEventListener("click", () => { prevSlide(); resetAutoPlay(); });
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => { currentIndex = i; updateCarousel(i); resetAutoPlay(); });
   });
 
-  if (howIcons.length > 0) {
-    updateHowContent("jugador");
+  const startAutoPlay = () => { autoPlayInterval = setInterval(nextSlide, 8000); };
+  const resetAutoPlay = () => { clearInterval(autoPlayInterval); startAutoPlay(); };
+
+  updateCarousel(currentIndex);
+  startAutoPlay();
+}
+
+// ==== Slider de beneficios ====
+const benefitCards = document.querySelectorAll(".benefit-card");
+let activeIndex = 0;
+
+function updateBenefitSlider() {
+  benefitCards.forEach((card, i) => {
+    card.classList.remove("active", "left", "right");
+    if (i === activeIndex) card.classList.add("active");
+    else if (i === (activeIndex - 1 + benefitCards.length) % benefitCards.length) card.classList.add("left");
+    else if (i === (activeIndex + 1) % benefitCards.length) card.classList.add("right");
+  });
+}
+
+benefitCards.forEach((card, i) => {
+  card.addEventListener("click", () => {
+    activeIndex = i;
+    updateBenefitSlider();
+  });
+});
+if (benefitCards.length > 0) updateBenefitSlider();
+
+// ==== Efectos hover en tarjetas ====
+document.querySelectorAll('.plan-card').forEach(card => {
+  card.addEventListener('mouseenter', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+    card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+    card.classList.add('hover-animate');
+  });
+  card.addEventListener('mouseleave', () => card.classList.remove('hover-animate'));
+});
+
+// ==== Duplicar testimonios para efecto infinito ====
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".testimonial-track");
+  if (track) {
+    const cards = Array.from(track.children);
+    cards.forEach(card => {
+      const clone = card.cloneNode(true);
+      track.appendChild(clone);
+    });
   }
+});
+
+
+const howData = {
+  es: {
+    paciente: {
+      step1: { title: "Regístrate", text: "Configura tu perfil personal y elige tus objetivos emocionales y cognitivos." },
+      step2: { title: "Realiza evaluaciones", text: "Completa pruebas neurológicas y emocionales guiadas por IA desde cualquier dispositivo." },
+      step3: { title: "Recibe tus reportes", text: "Obtén análisis claros de tu bienestar y recomendaciones para mejorar día a día." }
+    },
+    profesional: {
+      step1: { title: "Crea tu cuenta profesional", text: "Configura tu práctica, registra pacientes y activa tu panel clínico inteligente." },
+      step2: { title: "Evalúa y gestiona", text: "Accede a evaluaciones avanzadas con métricas cognitivas precisas y seguimiento continuo." },
+      step3: { title: "Optimiza tu consulta", text: "Aprovecha reportes automáticos y analítica clínica basada en IA para mejorar decisiones terapéuticas." }
+    },
+    empresarial: {
+      step1: { title: "Solicita acceso a la API", text: "Conecta plataformas, dispositivos o aplicativos internos a AuraNeuro de forma segura." },
+      step2: { title: "Integra tus dispositivos / apps", text: "Transfiere datos en tiempo real mediante nuestra API escalable y confiable." },
+      step3: { title: "Obtén métricas organizacionales", text: "Accede a dashboards ejecutivos y análisis anonimizados para optimizar decisiones estratégicas." }
+    }
+  },
+
+  en: {
+    paciente: {
+      step1: { title: "Sign up", text: "Configure your personal profile and set your emotional and cognitive goals." },
+      step2: { title: "Take evaluations", text: "Complete AI-guided neurological and emotional tests from any device." },
+      step3: { title: "Receive your reports", text: "Get clear insights into your well-being and personalized recommendations." }
+    },
+    profesional: {
+      step1: { title: "Create your professional account", text: "Set up your practice, register patients, and activate your smart clinical dashboard." },
+      step2: { title: "Evaluate and manage", text: "Access advanced evaluations with precise cognitive metrics and continuous tracking." },
+      step3: { title: "Optimize your practice", text: "Leverage automatic reports and AI-powered clinical analytics." }
+    },
+    empresarial: {
+      step1: { title: "Request API access", text: "Securely connect platforms, internal apps, or devices to AuraNeuro." },
+      step2: { title: "Integrate your technology", text: "Exchange real-time data through our scalable and reliable API." },
+      step3: { title: "Get organizational insights", text: "Access executive dashboards and anonymized analytics to optimize decisions." }
+    }
+  }
+};
+
+// Variables
+const icons = document.querySelectorAll(".how-icon");
+const segments = ["paciente", "profesional", "empresarial"];
+let currentSegment = "paciente";
+
+// ===============================
+// ACTUALIZAR CONTENIDO (idioma + segmento)
+// ===============================
+function updateHowContent(segment) {
+  const lang = document.documentElement.lang || "es";
+  const t = howData[lang][segment];
+
+  document.querySelector("[data-key='how_step1_title']").textContent = t.step1.title;
+  document.querySelector("[data-key='how_step1_text']").textContent = t.step1.text;
+
+  document.querySelector("[data-key='how_step2_title']").textContent = t.step2.title;
+  document.querySelector("[data-key='how_step2_text']").textContent = t.step2.text;
+
+  document.querySelector("[data-key='how_step3_title']").textContent = t.step3.title;
+  document.querySelector("[data-key='how_step3_text']").textContent = t.step3.text;
+
+  // actualizar icono activo
+  icons.forEach(btn => btn.classList.remove("active"));
+  const activeBtn = document.querySelector(`.how-icon[data-target="${segment}"]`);
+  if (activeBtn) activeBtn.classList.add("active");
+
+  currentSegment = segment;
+}
+
+// ===============================
+// CLICK en iconos (sin auto-rotación)
+// ===============================
+icons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const segment = btn.getAttribute("data-target");
+    updateHowContent(segment);
+  });
 });

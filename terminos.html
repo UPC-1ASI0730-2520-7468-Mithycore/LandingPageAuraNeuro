@@ -3,181 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Términos y Condiciones | Courtly</title>
+  <title data-key="terms_title">Términos y Condiciones | AuraNeuro</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
   <script src="language.js" defer></script>
 </head>
 
-<body>
+<body class="bg-dark text-light">
 
-  <!-- ===== HEADER ===== -->
-  <header class="navbar bg-darker">
-    <div class="navbar-container">
-      <a href="index.html#home" class="navbar-logo">
-        <img src="imgs/logo.png" alt="Courtly logo" />
-      </a>
+<!-- ==== HEADER ==== -->
+<header class="navbar bg-darker">
+  <div class="navbar-container">
+    <a href="#home" class="navbar-logo">
+      <img src="imgs/logo.png" alt="AuraNeuro" />
+    </a>
 
-      <button class="menu-toggle" aria-label="Abrir menú">
-        <i class="fa-solid fa-bars"></i>
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-links">
+      <ul>
+        <li><a href="index.html#home" class="nav-item" data-key="home">Inicio</a></li>
+        <li><a href="index.html#features" class="nav-item" data-key="features">Características</a></li>
+        <li><a href="index.html#how" class="nav-item" data-key="how">Cómo funciona</a></li>
+        <li><a href="index.html#plans" class="nav-item" data-key="plans">Planes</a></li>
+        <li><a href="index.html#team" class="nav-item" data-key="about">Sobre Nosotros</a></li>
+        <li><a href="index.html#testimonials" class="nav-item" data-key="testimonials">Testimonios</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="index.html#plans" class="btn-main" data-key="subscribe">Suscribirse</a>
+      <button class="lang-toggle">
+        <span class="lang-icon"><i class="fa-solid fa-globe"></i></span>
+        <span>ES</span>
       </button>
-
-      <nav class="nav-links">
-        <ul>
-          <li><a href="index.html#home" class="nav-item" data-key="nav_home">Inicio</a></li>
-          <li><a href="index.html#features" class="nav-item" data-key="nav_features">Características</a></li>
-          <li><a href="index.html#benefits" class="nav-item" data-key="nav_benefits">Beneficios</a></li>
-          <li><a href="index.html#how" class="nav-item" data-key="nav_how">Cómo funciona</a></li>
-          <li><a href="index.html#plans" class="nav-item" data-key="nav_plans">Planes</a></li>
-          <li><a href="index.html#team" class="nav-item" data-key="nav_team">Equipo</a></li>
-          <li><a href="index.html#testimonials" class="nav-item" data-key="nav_testimonials">Testimonios</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <button class="lang-toggle" type="button" aria-label="Cambiar idioma">
-          <i class="fa-solid fa-globe"></i>
-          <span class="lang-label">ES</span>
-        </button>
-        <a href="index.html#cta" class="btn-main btn-download" data-key="nav_download">Descargar</a>
-      </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- ===== CONTENT ===== -->
-  <main class="legal-section">
+<!-- ==== CONTENT ==== -->
+<main class="legal-section">
     <div class="legal-container">
-      <h1 data-key="terms_h1">Términos y Condiciones</h1>
+        <h1 data-key="terms_heading">Términos y Condiciones</h1>
+            <p data-key="terms_intro">
+            Bienvenido a <strong>AuraNeuro</strong>. Al acceder y utilizar nuestra plataforma, aceptas los siguientes términos y condiciones. 
+            Te recomendamos leerlos atentamente antes de utilizar nuestros servicios.
+            </p>
 
-      <p data-key="terms_intro">
-        Bienvenido a <strong>Courtly</strong>. Al acceder y utilizar nuestra plataforma,
-        aceptas los presentes Términos y Condiciones. Te recomendamos leerlos atentamente
-        antes de usar nuestros servicios.
-      </p>
+        <h2 data-key="terms_1_title">1. Aceptación de los términos</h2>
+            <p data-key="terms_1_text">
+            El uso de AuraNeuro implica la aceptación plena de estos términos. Si no estás de acuerdo con alguna parte, 
+            te pedimos que no utilices la plataforma.
+            </p>
 
-      <h2 data-key="terms_1_title">1. Aceptación de los términos</h2>
-      <p data-key="terms_1_text">
-        El uso de Courtly implica la aceptación plena de estos términos. Si no estás de acuerdo
-        con alguna de sus disposiciones, te pedimos que no utilices la plataforma.
-      </p>
+        <h2 data-key="terms_2_title">2. Descripción del servicio</h2>
+            <p data-key="terms_2_text">
+            AuraNeuro ofrece evaluaciones cognitivas y emocionales mediante inteligencia artificial, dirigidas a profesionales, 
+            pacientes y empresas. Los resultados proporcionados tienen fines informativos y no sustituyen la evaluación médica profesional.
+            </p>
 
-      <h2 data-key="terms_2_title">2. Descripción del servicio</h2>
-      <p data-key="terms_2_text">
-        Courtly es una plataforma digital que permite a los usuarios buscar y reservar canchas
-        deportivas, así como conectar con entrenadores independientes. Algunas funciones pueden incluir
-        gestión de disponibilidad, pagos digitales, valoraciones y notificaciones relacionadas con la actividad.
-      </p>
+        <h2 data-key="terms_3_title">3. Uso permitido</h2>
+            <p data-key="terms_3_text">
+            El usuario se compromete a utilizar la plataforma de manera responsable y conforme a la ley. Está prohibido usar AuraNeuro 
+            para recopilar, distribuir o modificar información con fines no autorizados o ilícitos.
+            </p>
 
-      <h2 data-key="terms_3_title">3. Uso permitido</h2>
-      <p data-key="terms_3_text">
-        El usuario se compromete a utilizar Courtly de forma responsable, lícita y respetuosa.
-        Está prohibido usar la plataforma para fines fraudulentos, para suplantar identidades,
-        afectar la experiencia de otros usuarios o vulnerar el funcionamiento del sistema.
-      </p>
+        <h2 data-key="terms_4_title">4. Registro y cuenta</h2>
+            <p data-key="terms_4_text">
+            Para acceder a ciertas funciones, es necesario crear una cuenta. El usuario se responsabiliza por la veracidad de los datos 
+            proporcionados y por mantener la confidencialidad de sus credenciales.
+            </p>
 
-      <h2 data-key="terms_4_title">4. Registro y cuenta</h2>
-      <p data-key="terms_4_text">
-        Para acceder a ciertas funcionalidades, puede ser necesario crear una cuenta.
-        El usuario es responsable de proporcionar información veraz, mantener actualizados sus datos
-        y resguardar la confidencialidad de sus credenciales de acceso.
-      </p>
+        <h2 data-key="terms_5_title">5. Propiedad intelectual</h2>
+            <p data-key="terms_5_text">
+            Todo el contenido, marcas, algoritmos y diseños pertenecen a <strong>AuraNeuro</strong> y están protegidos por derechos de autor 
+            y propiedad intelectual. No se permite su uso sin autorización previa por escrito.
+            </p>
 
-      <h2 data-key="terms_5_title">5. Reservas, pagos y servicios ofrecidos</h2>
-      <p data-key="terms_5_text">
-        Courtly facilita la interacción entre usuarios, canchas deportivas y entrenadores independientes.
-        La disponibilidad, condiciones del servicio, precios y cumplimiento de las actividades ofrecidas
-        podrán depender de cada proveedor o profesional registrado en la plataforma.
-      </p>
+        <h2 data-key="terms_6_title">6. Limitación de responsabilidad</h2>
+            <p data-key="terms_6_text">
+            AuraNeuro no se hace responsable de daños derivados del uso o la imposibilidad de uso de la plataforma, ni de errores derivados 
+            de la interpretación de los resultados.
+            </p>
 
-      <h2 data-key="terms_6_title">6. Propiedad intelectual</h2>
-      <p data-key="terms_6_text">
-        Todo el contenido de Courtly, incluyendo nombre comercial, diseño, interfaz, elementos visuales,
-        funcionalidades, textos y demás materiales asociados, está protegido por la normativa aplicable
-        sobre propiedad intelectual. No está permitido copiar, distribuir o reutilizar dicho contenido
-        sin autorización previa.
-      </p>
+        <h2 data-key="terms_7_title">7. Protección de datos</h2>
+            <p data-key="terms_7_text">
+            El tratamiento de la información personal se rige por nuestra <a href="privacidad.html" data-key="terms_7_link">Política de Privacidad</a>. 
+            AuraNeuro cumple con normativas internacionales de protección de datos y confidencialidad médica.
+            </p>
 
-      <h2 data-key="terms_7_title">7. Limitación de responsabilidad</h2>
-      <p data-key="terms_7_text">
-        Courtly no garantiza que la plataforma esté libre de interrupciones o errores en todo momento.
-        Tampoco será responsable por daños indirectos, pérdida de oportunidades, conflictos entre usuarios
-        o incumplimientos atribuibles a terceros, en la medida permitida por la legislación aplicable.
-      </p>
+        <h2 data-key="terms_8_title">8. Modificaciones</h2>
+            <p data-key="terms_8_text">
+            Nos reservamos el derecho de actualizar estos términos en cualquier momento. Las modificaciones se publicarán en esta página 
+            y se notificarán a los usuarios si el cambio es significativo.
+            </p>
 
-      <h2 data-key="terms_8_title">8. Protección de datos</h2>
-      <p data-key="terms_8_text">
-        El tratamiento de los datos personales se rige por nuestra
-        <a href="privacidad.html">Política de Privacidad</a>.
-        Al utilizar la plataforma, el usuario reconoce haber leído dicha política y entender
-        cómo Courtly recopila y utiliza la información.
-      </p>
-
-      <h2 data-key="terms_9_title">9. Modificaciones</h2>
-      <p data-key="terms_9_text">
-        Courtly podrá actualizar estos Términos y Condiciones cuando resulte necesario.
-        Cualquier modificación relevante será publicada en esta página y entrará en vigor
-        desde su publicación o desde la fecha que se indique expresamente.
-      </p>
-
-      <h2 data-key="terms_10_title">10. Legislación aplicable</h2>
-      <p data-key="terms_10_text">
-        Estos términos se interpretarán de acuerdo con la legislación aplicable en la jurisdicción
-        correspondiente a la operación de la plataforma. Cualquier controversia será resuelta
-        por las autoridades o tribunales competentes según corresponda.
-      </p>
+        <h2 data-key="terms_9_title">9. Legislación aplicable</h2>
+            <p data-key="terms_9_text">
+            Estos términos se rigen por las leyes vigentes del país en el que AuraNeuro opera. 
+            Cualquier disputa será resuelta ante los tribunales competentes del mismo.
+            </p>
     </div>
-  </main>
+</main>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+<!-- ==== FOOTER ==== -->
+<footer class="footer">
     <div class="footer-container">
-
-      <div class="footer-col brand">
-        <h3 class="logo-text">COURTLY</h3>
-        <p>
-          <span data-key="footer_brand_text">Plataforma móvil para buscar canchas, reservar espacios deportivos,
-          conectar con entrenadores y organizar actividades de forma rápida y confiable.</span>
-        </p>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-key="footer_links">Enlaces</h4>
-        <ul>
-          <li><a href="index.html#home" data-key="nav_home">Inicio</a></li>
-          <li><a href="index.html#features" data-key="nav_features">Características</a></li>
-          <li><a href="index.html#benefits" data-key="nav_benefits">Beneficios</a></li>
-          <li><a href="index.html#plans" data-key="nav_plans">Planes</a></li>
-          <li><a href="index.html#testimonials" data-key="nav_testimonials">Testimonios</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4 data-key="footer_legal">Legal</h4>
-        <ul>
-          <li><a href="terminos.html" data-key="legal_terms">Términos y condiciones</a></li>
-          <li><a href="privacidad.html" data-key="legal_privacy">Política de privacidad</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col social">
-        <h4 data-key="footer_social">Síguenos</h4>
-        <div class="social-icons">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <div class="footer-col brand">
+            <h3 class="logo"><span class="highlight">Aura</span>Neuro</h3>
+                <p data-key="footer_description">
+                Evaluaciones neurológicas impulsadas por IA, seguras, inteligentes y accesibles 
+                para profesionales, pacientes y organizaciones.
+                </p>
         </div>
-      </div>
 
+        <div class="footer-col">
+            <h4 data-key="footer_links_title">Enlaces</h4>
+                <ul>
+                    <li><a href="index.html#home" data-key="footer_link_home">Inicio</a></li>
+                <li><a href="index.html#features" data-key="footer_link_features">Características</a></li>
+                <li><a href="index.html#about" data-key="footer_link_about">Sobre Nosotros</a></li>
+                <li><a href="index.html#plans" data-key="footer_link_plans">Planes</a></li>
+                <li><a href="index.html#testimonials" data-key="footer_link_testimonials">Testimonios</a></li>
+                </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4 data-key="footer_legal_title">Legal</h4>
+                <ul>
+                    <li><a href="terminos.html" data-key="footer_legal_terms">Términos y condiciones</a></li>
+                    <li><a href="privacidad.html" data-key="footer_legal_privacy">Política de privacidad</a></li>
+                </ul>
+        </div>
+
+        <div class="footer-col social">
+            <h4 data-key="footer_social_title">Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+        </div>
     </div>
 
     <div class="footer-bottom">
-      <p data-key="footer_copy">© 2026 Courtly. Todos los derechos reservados.</p>
+        <p data-key="footer_bottom_text">
+            © 2025 <span class="highlight">AuraNeuro</span>. Todos los derechos reservados.
+        </p>
     </div>
-  </footer>
+</footer>
 
 </body>
 </html>
